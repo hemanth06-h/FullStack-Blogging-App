@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: bankapp-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: bankapp
-  replicas: 2
   template:
     metadata:
       labels:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blankapp-svc
+  name: bankapp-svc # Corrected service name from 'blankapp-svc' to 'bankapp-svc'
 spec:
   selector:
     app: bankapp
